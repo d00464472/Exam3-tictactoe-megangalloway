@@ -12,7 +12,7 @@ public:
 
     void display() const;
     bool makeMove(int position, char player);
-    bool checkWinner(char player) const;
+    bool checkWinner(const char& player) const;
     bool isFull() const;
 };
 

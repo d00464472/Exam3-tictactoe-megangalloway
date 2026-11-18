@@ -46,7 +46,7 @@ bool Board::makeMove(int position, char player) {
 }
 
 // Check if a player has won
-bool Board::checkWinner(char player) const {
+bool Board::checkWinner(const char& player) const {
     // All possible winning combinations
     int wins[8][3] = {
         {0, 1, 2},
