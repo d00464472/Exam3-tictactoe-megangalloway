@@ -19,6 +19,7 @@ void Game::switchPlayer() {
 }
 
 // Run the game
+
 void Game::play() {
     int position;
     bool gameOver = false;
@@ -31,6 +32,16 @@ void Game::play() {
         cout << "Player " << m_currentPlayer;
         cout << ", choose a position (1-9): ";
         cin >> position;
+
+        // Check for non-numeric input
+        if (cin.fail()) {
+            cout << "Please enter a number between 1 and 9.\n";
+
+            cin.clear();
+            cin.ignore(10000, '\n');
+
+            continue;
+        }
 
         // Check if the move is valid
         if (!m_board.makeMove(position, m_currentPlayer)) {
@@ -55,3 +66,4 @@ void Game::play() {
         }
     }
 }
+
